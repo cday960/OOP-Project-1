@@ -6,19 +6,19 @@ import java.util.Scanner;
 public class Item 
 {
     //enum for Item type
-    enum Itemtype
-    {
-        Book,
-        DVD,
-        Newspaper,
-        Textbook
-    }
+    // enum Itemtype
+    // {
+    //     Book,
+    //     DVD,
+    //     Newspaper,
+    //     Textbook
+    // }
 
-    protected String ItemID;        //Member stores the Item ID
-    protected String CheckedOutTo;  //Member stores the MemberID of the member it is checked out to
-    protected String DateCheckedOut;//Member stores date item was checked out
-    protected String DateToReturn;  //Member stores the date item is expected to be returned
-    protected Itemtype ItemType;
+    // protected String ItemID;        //Member stores the Item ID
+    // protected String CheckedOutTo;  //Member stores the MemberID of the member it is checked out to
+    // protected String DateCheckedOut;//Member stores date item was checked out
+    // protected String DateToReturn;  //Member stores the date item is expected to be returned
+    // protected Itemtype ItemType;
 
     //Member for scanner that will be used in methods
     Scanner scanner = new Scanner(System.in);
@@ -95,28 +95,28 @@ public class Item
         return this.DateToReturn;
     }
     //ItemType setter and getter
-    public void setItemType(String itemType)
-    {
-        //logic to verify format
-        while(itemType.matches(""))
-        {
-            switch(itemType)
-            {
-                case "Book":
-                    this.ItemType = Itemtype.Book;
-                    break;
-                case "DVD":
-                    this.ItemType = Itemtype.DVD;
-                    break;
-                case "Newspaper":
-                    this.ItemType = Itemtype.Newspaper;
-                    break;
-                case "TextBook":
-                    this.ItemType = Itemtype.Textbook;
-                case default:
-                    System.Out.Println("Please Enter Valid Item Type: ");
-                    itemType = scanner.nextLine();
-            }
-        }
-    }
+    // public void setItemType(String itemType)
+    // {
+    //     //logic to verify format
+    //     while(itemType.matches(""))
+    //     {
+    //         switch(itemType)
+    //         {
+    //             case "Book":
+    //                 this.ItemType = Itemtype.Book;
+    //                 break;
+    //             case "DVD":
+    //                 this.ItemType = Itemtype.DVD;
+    //                 break;
+    //             case "Newspaper":
+    //                 this.ItemType = Itemtype.Newspaper;
+    //                 break;
+    //             case "TextBook":
+    //                 this.ItemType = Itemtype.Textbook;
+    //             case default:
+    //                 System.Out.Println("Please Enter Valid Item Type: ");
+    //                 itemType = scanner.nextLine();
+    //         }
+    //     }
+    // }
 }

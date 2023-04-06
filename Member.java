@@ -1,6 +1,9 @@
 public class Member extends Person
 {
     String userID;
+    float amountFined;
+    int maxNumbOfBooks;
+    int booksChecked;
 
     public Member()//Default constructor
     {
@@ -10,8 +13,27 @@ public class Member extends Person
         this.Email = "";
         this.SSN = "";
         this.userID = "";
+        this.amountFined = 0;
+        this.maxNumbOfBooks = 5;
+        this.booksChecked = 0;
     }
     
+    public Member(String name, String address, String dob, String email, String ssn, String userid, float fined, int max, int checked)//Constructor with everything correct
+    {
+        super(name, address, dob, email, ssn);//Takes the constructor from the super
+        if(!userid.matches("[0-9]{4}"))//Checks if the constructor obtained bad data and if so fix it
+        {
+            while(!userid.matches("[0-9]{4}")) //Makes sure it is the right format 
+            {
+                System.out.println("Invalid User ID. Insert User ID in Format ####: ");
+                userid = scanner.nextLine();//Scan new ID
+            }
+        }
+        this.amountFined = fined;
+        this.maxNumbOfBooks = max;
+        this.booksChecked = checked;
+        this.userID = userid;
+    }
     public Member(String name, String address, String dob, String email, String ssn, String userid)//Constructor with everything correct
     {
         super(name, address, dob, email, ssn);//Takes the constructor from the super
@@ -23,7 +45,50 @@ public class Member extends Person
                 userid = scanner.nextLine();//Scan new ID
             }
         }
+        this.amountFined = 0f;
+        this.maxNumbOfBooks = 5;
+        this.booksChecked = 0;
         this.userID = userid;
+    }
+
+    public void addFined(float fine)
+    {
+        this.amountFined += fine;
+    }
+
+    public float getFined()
+    {
+        return(this.amountFined);
+    }
+
+    public void setFined(float fine)
+    {
+        this.amountFined = fine;
+    }
+
+    public int getMaxBook()
+    {
+        return(this.maxNumbOfBooks);
+    }
+    
+    public void setMaxBook(int max)
+    {
+        this.maxNumbOfBooks = max;
+    }
+
+    public int getChecked()
+    {
+        return(this.booksChecked);
+    }
+
+    public void addChecked(int x)
+    {
+        this.booksChecked += x;
+    }
+
+    public void setCheked(int x)
+    {
+        this.booksChecked = x;
     }
 
     public void setUserID(String userid)//Takes a premade userID and sets object id to it
@@ -55,6 +120,6 @@ public class Member extends Person
     @Override
     public String toString()//Overrides the toString to match the person output but adding in the userID at the end
     {
-        return this.Name + ", " + this.DOB + ", " + this.Address + ", " + this.SSN + ", " + this.Email + ", " + this.userID;
+        return this.Name + ", " + this.DOB + ", " + this.Address + ", " + this.SSN + ", " + this.Email + ", " + this.userID + ", Amount Fined : " + this.amountFined + ", Max Amount of Books " + this.maxNumbOfBooks + ", Current # Books Checked out " + this.booksChecked;
     }
 }

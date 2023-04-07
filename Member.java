@@ -73,6 +73,10 @@ public class Member extends Person
     
     public void setMaxBook(int max)
     {
+        if(max < 0)
+        {
+            max = 0;
+        }
         this.maxNumbOfBooks = max;
     }
 
@@ -86,8 +90,12 @@ public class Member extends Person
         this.booksChecked += x;
     }
 
-    public void setCheked(int x)
+    public void setChecked(int x)
     {
+        if(x < 0)
+        {
+            x = 0;
+        }
         this.booksChecked = x;
     }
 
@@ -120,6 +128,8 @@ public class Member extends Person
     @Override
     public String toString()//Overrides the toString to match the person output but adding in the userID at the end
     {
-        return this.Name + ", " + this.DOB + ", " + this.Address + ", " + this.SSN + ", " + this.Email + ", " + this.userID + ", Amount Fined : " + this.amountFined + ", Max Amount of Books " + this.maxNumbOfBooks + ", Current # Books Checked out " + this.booksChecked;
+        String stringFine = Float.toString((this.amountFined));
+        float temp = Float.parseFloat(stringFine);
+        return this.Name + ", " + this.DOB + ", " + this.Address + ", " + this.SSN + ", " + this.Email + ", " + this.userID + ", Amount Fined : " + temp + ", Max Amount of Books " + this.maxNumbOfBooks + ", Current # Books Checked out " + this.booksChecked;
     }
 }

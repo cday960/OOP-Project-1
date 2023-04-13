@@ -32,9 +32,12 @@ public class Student extends Member
     @Override
     public String toString()
     {
-        String stringFine = Float.toString((this.amountFined));
-        float temp = Float.parseFloat(stringFine);
+        float temp = this.amountFined;//Following couple of lines set the amountFined to two decimal points
+        temp = temp * 100;
+        temp = (int) temp;
+        temp = temp / 100;
         return this.Name + ", " + this.DOB + ", " + this.Address + ", " + this.SSN + ", " + this.Email + ", " + this.userID + ", Amount Fined : " + temp + ", Max Amount of Books " + this.maxNumbOfBooks + ", Current # Books Checked out " + this.booksChecked + ", Teacher: " + this.currentProfessor.getName();
     }
+
 
 }

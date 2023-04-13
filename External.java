@@ -15,6 +15,16 @@ public class External extends Member
         super(name, address, dob, email, ssn, userid);//Takes the constructor from the super
     }
 
+
+    @Override
+    public String toString()//Overrides the toString to match the person output but adding in the userID at the end
+    {
+        float temp = this.amountFined;//Following couple of lines set the amountFined to two decimal points
+        temp = temp * 100;
+        temp = (int) temp;
+        temp = temp / 100;
+        return this.Name + ", " + this.DOB + ", " + this.Address + ", " + this.SSN + ", " + this.Email + ", " + this.userID + ", Amount Fined : " + temp + ", Max Amount of Books " + this.maxNumbOfBooks + ", Current # Books Checked out " + this.booksChecked;
+    }
     
 
 }

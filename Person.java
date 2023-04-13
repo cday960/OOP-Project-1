@@ -138,8 +138,4 @@ public class Person
         return this.Name + ", " + this.DOB + ", " + this.Address + ", " + this.SSN + ", " + this.Email;
     }
 
-    public static void main(String[] args)
-    {
-        
-    }
 }

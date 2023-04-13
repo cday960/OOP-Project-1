@@ -30,7 +30,15 @@ public class Member extends Person
             }
         }
         this.amountFined = fined;
+        if(maxNumbOfBooks < 0)
+        {
+            maxNumbOfBooks = 0;
+        }
         this.maxNumbOfBooks = max;
+        if(booksChecked < 0)
+        {
+            booksChecked = 0;
+        }
         this.booksChecked = checked;
         this.userID = userid;
     }
@@ -128,8 +136,11 @@ public class Member extends Person
     @Override
     public String toString()//Overrides the toString to match the person output but adding in the userID at the end
     {
-        String stringFine = Float.toString((this.amountFined));
-        float temp = Float.parseFloat(stringFine);
+        float temp = this.amountFined;//Following couple of lines set the amountFined to two decimal points
+        temp = temp * 100;
+        temp = (int) temp;
+        temp = temp / 100;
         return this.Name + ", " + this.DOB + ", " + this.Address + ", " + this.SSN + ", " + this.Email + ", " + this.userID + ", Amount Fined : " + temp + ", Max Amount of Books " + this.maxNumbOfBooks + ", Current # Books Checked out " + this.booksChecked;
     }
+    
 }

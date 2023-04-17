@@ -29,6 +29,33 @@ public class Person
     //Constructor given all member fields
     public Person(String name, String address, String dob, String email, String ssn)
     {
+        //This Line to next comment makes sure the user gives proper values
+        while(!name.matches("[a-zA-Z]*\s[a-zA-Z\s]*"))
+        {
+            System.out.println("Please Enter Name in Format {firstName} {lastName} {suffix}: ");
+            name = scanner.nextLine();
+        }
+        while(!address.matches("[0-9]+\s[a-zA-Z1-9\s.]*\s[0-9]{5}"))
+        {
+            System.out.println("Please Enter Address in Format {Street Number} {Street Name} {Zip Code}: ");
+            address = scanner.nextLine();
+        }
+        while(!dob.matches("[0-9]{2}/[0-9]{2}/[0-9]{4}"))
+        {
+            System.out.println("Please Enter DOB in Format ##/##/####: ");
+            dob = scanner.nextLine();
+        }
+        while(!email.matches("[a-zA-Z1-9]*@[a-zA-Z]*[.]{1}[a-zA-Z.]*"))
+        {
+            System.out.println("Please Enter Email in Format {User}@{domain}.{domainSuffix}: ");
+            email = scanner.nextLine();
+        }
+        while(!ssn.matches("[0-9]{3}-[0-9]{2}-[0-9]{4}"))  
+        {
+            System.out.println("Please Enter SSN in Format ###-##-####: ");
+            ssn = scanner.nextLine();
+        }
+        //End of checking
         this.Name = name;
         this.Address = address;
         this.DOB = dob;

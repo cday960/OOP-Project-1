@@ -2,13 +2,16 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.temporal.ChronoUnit;
 
 public class Item 
 {
     protected String ItemID;        //Member stores the Item ID
     protected String CheckedOutTo;  //Member stores the MemberID of the member it is checked out to
-    protected String DateCheckedOut;//Member stores date item was checked out
-    protected String DateToReturn;  //Member stores the date item is expected to be returned
+    protected LocalDate DateCheckedOut;//Member stores date item was checked out
+    //protected String DateToReturn;  //Member stores the date item is expected to be returned
 
     //Member for scanner that will be used in methods
     Scanner scanner = new Scanner(System.in);
@@ -18,15 +21,23 @@ public class Item
     {
         this.ItemID = "";
         this.CheckedOutTo = "";
-        this.DateCheckedOut = "";
-        this.DateCheckedOut = "";
+        this.DateCheckedOut = LocalDate.now();
+        //this.DateCheckedOut = "";
     }
     //Constructor given all member fields
-    public Item(String itemid, String checkedoutto, String datecheckedout)
+    public Item(String itemid, String checkedoutto)
     {
+        if(!checkedoutto.matches("[0-9]{4}"))//Checks if the constructor obtained bad data and if so fix it
+        {
+            while(!checkedoutto.matches("[0-9]{4}")) //Makes sure it is the right format 
+            {
+                System.out.println("Invalid Member ID. Insert Member ID in Format ####: ");
+                checkedoutto = scanner.nextLine();//Scan new ID
+            }
+        }
         this.ItemID = itemid;
         this.CheckedOutTo = checkedoutto;
-        this.DateCheckedOut = datecheckedout;
+        this.DateCheckedOut = LocalDate.now();
         //Logic to get return date
     }
 
@@ -44,6 +55,14 @@ public class Item
     public void setCheckedOutTo(String checkoutto)
     {
         //verify format
+        if(!checkoutto.matches("[0-9]{4}"))
+        {
+            while(!checkoutto.matches("[0-9]{4}")) //Makes sure it is the right format 
+            {
+                System.out.println("Invalid Member ID. Insert Member ID in Format ####: ");
+                checkoutto = scanner.nextLine();//Scan new ID
+            }
+        }
         this.CheckedOutTo = checkoutto;
     }
     public String getCheckedOutTo()
@@ -51,21 +70,21 @@ public class Item
         return this.CheckedOutTo;
     }
     //DateCheckedOut setter and getter
-    public void setDates(String datecheckedout)
+    public void setDates()
     {
         //verify format
         //do logic to get return date
-        String datetoreturn = "";
-        this.DateCheckedOut = datecheckedout;
-        this.DateToReturn = datetoreturn;
+        //String datetoreturn = "";
+        this.DateCheckedOut = LocalDate.now();
+        //this.DateToReturn = datetoreturn;
     }
-    public String getDateCheckedOut()
+    public LocalDate getDateCheckedOut()
     {
         return this.DateCheckedOut;
     }
     //DateToReturn getter
-    public String getDateToReturn()
-    {
-        return this.DateToReturn;
-    }
+    //public String getDateToReturn()
+    //{
+    //    return this.DateToReturn;
+    //}
 }

@@ -24,6 +24,13 @@ public class Item
         this.DateCheckedOut = LocalDate.now();
         //this.DateCheckedOut = "";
     }
+
+    public Item(String itemid)
+    {
+        this.ItemID = itemid;
+        CheckedOutTo = "";
+        this.DateCheckedOut = LocalDate.now();
+    }
     //Constructor given all member fields
     public Item(String itemid, String checkedoutto)
     {

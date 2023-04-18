@@ -34,7 +34,7 @@ public class Member extends Person
         {
             maxBooks = 0;
         }
-        this.maxNumbOfBooks = max;
+        this.maxNumbOfBooks = maxBooks;
         if(checkedBooks < 0)
         {
             checkedBooks = 0;

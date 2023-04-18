@@ -5,9 +5,9 @@ public class Professor extends Member
     ArrayList <Student> classList;//Holds the students
 
 
-    public Professor(String name, String address, String dob, String email, String ssn, String userid, float fined, int max, int checked, Student s)//Contructor with a student 
+    public Professor(String name, String address, String dob, String email, String ssn, String userid, float fined, int maxBooks, int checkedBooks, Student s)//Contructor with a student 
     {
-        super(name, address, dob, email, ssn, userid, fined, max, checked);
+        super(name, address, dob, email, ssn, userid, fined, maxBooks, checkedBooks);
         this.classList = new ArrayList<Student>();
         if(s != null)
         {
@@ -15,15 +15,15 @@ public class Professor extends Member
         }
     }
 
-    public Professor(String name, String address, String dob, String email, String ssn, String userid, float fined, int max, int checked)//Contructor without a student (sets list to blank)
+    public Professor(String name, String address, String dob, String email, String ssn, String userid, float fined, int maxBooks, int checkedBooks)//Contructor without a student (sets list to blank)
     {
-        super(name, address, dob, email, ssn, userid, fined, max, checked);
+        super(name, address, dob, email, ssn, userid, fined, maxBooks, checkedBooks);
         this.classList = new ArrayList<Student>();
     }
 
-    public Professor(String name, String address, String dob, String email, String ssn, String userid, float fined, int max, int checked, ArrayList <Student> s)//Constructor with a student array
+    public Professor(String name, String address, String dob, String email, String ssn, String userid, float fined, int maxBooks, int checkedBooks, ArrayList <Student> s)//Constructor with a student array
     {
-        super(name, address, dob, email, ssn, userid, fined, max, checked);
+        super(name, address, dob, email, ssn, userid, fined, maxBooks, checkedBooks);
         classList = s;
     }
 

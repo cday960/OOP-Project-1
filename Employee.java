@@ -21,10 +21,10 @@ public class Employee extends Person
         this.employeeID = "";
     }
 
-    public Employee(String name, String address, String dob, String email, String ssn, String empID, float s)
+    public Employee(String name, String address, String dob, String email, String ssn, String empID, float salary)
     {
         super(name, address, dob, email, ssn);
-        this.Salary = s;
+        this.Salary = salary;
         if(!empID.matches("[0-9]{3}"))//Checks if the constructor obtained bad data and if so fix it
         {
             while(!empID.matches("[0-9]{3}")) //Makes sure it is the right format 

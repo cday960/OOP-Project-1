@@ -94,4 +94,11 @@ public class Item
     //{
     //    return this.DateToReturn;
     //}
+
+    @Override
+    public String toString()//Overrides the toString
+    {
+        return this.ItemID + ", " + this.CheckedOutTo + ", " + this.DateCheckedOut.toString() ;
+    }
+
 }

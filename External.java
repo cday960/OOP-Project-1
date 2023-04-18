@@ -5,9 +5,9 @@ public class External extends Member
         super();
     }
 
-    public External(String name, String address, String dob, String email, String ssn, String userid, float fined, int max, int checked)//Constructor with everything correct
+    public External(String name, String address, String dob, String email, String ssn, String userid, float fined, int maxBooks, int checked)//Constructor with everything correct
     {
-        super(name, address, dob, email, ssn, userid, fined, max, checked);//Takes the constructor from the super
+        super(name, address, dob, email, ssn, userid, fined, maxBooks, checked);//Takes the constructor from the super
     }
 
     public External(String name, String address, String dob, String email, String ssn, String userid)//Constructor with everything correct

@@ -67,31 +67,9 @@ public class Newspaper extends Item
         
     }
 
-    //public void toString()
+    public String toString()//Overrides the toString
     {
-        //super.toString();
+        return super.toString();
     }
-
-
-
-public static void main(String[] args)
-{
-    String id = "1553-123X";
-    String borrower = "Brennan Scheel";
-    Newspaper test =  new Newspaper(id, borrower);
-    
-    System.out.printf("%s\n", test.getCheckedOutTo());
-    System.out.printf("%s\n", (test.getDateCheckedOut()).toString());
-    System.out.printf("%s\n", test.getItemID());
-
-    System.out.printf("%s\n", test.toString());
-
-    
-}
-
-public String toString()//Overrides the toString
-{
-    return super.toString();
-}
 
 }

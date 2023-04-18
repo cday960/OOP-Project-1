@@ -48,4 +48,18 @@ public class Technician extends Employee
     Employee newEmployee = new Employee(name, address, dob, email, ssn);
     employeeList.add(newEmployee);
   }
+
+  public void newEmployee(
+    String name, 
+    String address, 
+    String dob, 
+    String email, 
+    String ssn, 
+    String empID,
+    float salary,
+    ArrayList<Employee> employeeList
+  ){
+    Employee newEmployee = new Employee(name, address, dob, email, ssn, empID, salary);
+    employeeList.add(newEmployee);
+  }
 }

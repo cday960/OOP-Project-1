@@ -18,7 +18,7 @@ public class Member extends Person
         this.booksChecked = 0;
     }
     
-    public Member(String name, String address, String dob, String email, String ssn, String userid, float fined, int max, int checked)//Constructor with everything correct
+    public Member(String name, String address, String dob, String email, String ssn, String userid, float fined, int maxBooks, int checkedBooks)//Constructor with everything correct
     {
         super(name, address, dob, email, ssn);//Takes the constructor from the super
         if(!userid.matches("[0-9]{4}"))//Checks if the constructor obtained bad data and if so fix it
@@ -30,16 +30,16 @@ public class Member extends Person
             }
         }
         this.amountFined = fined;
-        if(maxNumbOfBooks < 0)
+        if(maxBooks < 0)
         {
-            maxNumbOfBooks = 0;
+            maxBooks = 0;
         }
-        this.maxNumbOfBooks = max;
-        if(booksChecked < 0)
+        this.maxNumbOfBooks = maxBooks;
+        if(checkedBooks < 0)
         {
-            booksChecked = 0;
+            checkedBooks = 0;
         }
-        this.booksChecked = checked;
+        this.booksChecked = checkedBooks;
         this.userID = userid;
     }
     public Member(String name, String address, String dob, String email, String ssn, String userid)//Constructor with everything correct

@@ -77,7 +77,7 @@ public class Item
         return this.CheckedOutTo;
     }
     //DateCheckedOut setter and getter
-    public void setDates()
+    public void setDate()
     {
         //verify format
         //do logic to get return date

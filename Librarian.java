@@ -14,9 +14,9 @@ public class Librarian extends Employee
         super(name,address,dob,email,ssn);
     }
 
-    public Librarian(String name, String address, String dob, String email, String ssn, String empID, float s)//Librarian does not have extra values so you can call the super
+    public Librarian(String name, String address, String dob, String email, String ssn, String empID, float salary)//Librarian does not have extra values so you can call the super
     {
-        super(name,address, dob, email, ssn, empID, s);
+        super(name,address, dob, email, ssn, empID, salary);
     }
 
     public void checkOutItem(Item item, Member member)//Sets the item date to ccurrent date and the checkedOutTo to the member

@@ -18,7 +18,17 @@ public class Employee extends Person
     {
         super(name, address, dob, email, ssn);
         this.Salary = 0;
-        this.employeeID = "";
+        System.out.println("Insert employeeID. Format ###: ");
+        String empID = scanner.nextLine();
+        if(!empID.matches("[0-9]{3}"))//Checks if the constructor obtained bad data and if so fix it
+        {
+            while(!empID.matches("[0-9]{3}")) //Makes sure it is the right format 
+            {
+                System.out.println("Invalid Employee ID. Insert Employee ID in Format ###: ");
+                empID = scanner.nextLine();//Scan new ID
+            }
+        }
+        this.employeeID = empID;
     }
 
     public Employee(String name, String address, String dob, String email, String ssn, String empID, float salary)

@@ -19,8 +19,36 @@ public class Technician extends Employee
 
   public void addItem(String itemid, ArrayList<Item> items)
   {
-    Item newItem = new Item(itemid);
-    items.add(newItem);
+    System.out.println("What type of Item : Book, DVD, Newspaper, or Journal");//Prompts what item type
+    String itemType = scanner.nextLine();
+    if(!itemType.equals("Book") && !itemType.equals("DVD") && !itemType.equals("Newspaper") && !itemType.equals("Journal"))//Checks if it matches any valid name
+    {
+      while(!itemType.equals("Book") && !itemType.equals("DVD") && !itemType.equals("Newspaper") && !itemType.equals("Journal"))//Go again until right
+            {
+                System.out.println("Invalid Item Type. Insert Book, DVD, Newspaper, or Journal: ");
+                itemType = scanner.nextLine();
+            }
+    }
+    if(itemType.equals("Book"))//If book
+    {
+      Book newBook = new Book(itemid);//make new book
+      items.add(newBook);
+    }
+    if(itemType.equals("DVD"))//If DVD
+    {
+      DVD newDVD = new DVD(itemid);//make new DVD
+      items.add(newDVD);
+    }
+    if(itemType.equals("Journal"))//If Journal
+    {
+      Journal newJournal = new Journal(itemid);//Make new journal
+      items.add(newJournal);
+    }
+    if(itemType.equals("Newspaper"))//If newspaper
+    {
+      Newspaper newNewspaper = new Newspaper(itemid);//makes new newspaper
+      items.add(newNewspaper);
+    }
   }
 
   public void removeItem(String itemId, ArrayList<Item> arrayList)
@@ -85,4 +113,5 @@ public class Technician extends Employee
     }
   }
 
+  
 }
